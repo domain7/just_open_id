@@ -1,0 +1,16 @@
+just_open_id is a Rails 3 engine for just OpenID logins using OmniAuth that connects to a User model.
+
+The goal of this gem is to make it possible to manage accounts across multiple small apps. 
+
+I also want to use a User model and current_user helper method in the most traditional way in each app.
+
+1. Run your migrations for your namespaced User model.
+2. Ensure you have a root path.
+3. Add something like this to a template.
+
+<% if current_user %>
+  Welcome <%= current_user.name %>!
+  <%= link_to "Sign Out", signout_path %>
+<% else %>
+  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+<% end %>'
