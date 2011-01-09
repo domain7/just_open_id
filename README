@@ -1,8 +1,22 @@
-just_open_id is a Rails 3 engine for just OpenID logins using OmniAuth that connects to a User model.
+just_open_id is a Rails 3 engine for just OpenID logins using OmniAuth. It connects a OpenID account to a lightweight, locally stored User model.
 
-The goal of this gem is to make it possible to manage accounts across multiple small apps. 
+The goal of this gem is to make it possible to manage accounts across multiple small apps, using as little as code as possible in each respective app. 
 
-I also want to use a User model and current_user helper method in the most traditional way in each app.
+I also want to use a User model and current_user helper method in the most traditional way.
+
+Installation:
+
+gem 'just_open_id'
+rails g just_open_id
+
+What that did:
+
+The generator will create 3 things in your app: 
+1. User model subclassed to the one in the Rails engine.
+2. Migration for that Rails engine User model.
+3. config/initializers/just_open_id.rb
+
+Usage:
 
 1. Run your migrations for your namespaced User model.
 2. Ensure you have a root path.
@@ -12,5 +26,12 @@ I also want to use a User model and current_user helper method in the most tradi
   Welcome <%= current_user.name %>!
   <%= link_to "Sign Out", signout_path %>
 <% else %>
-  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+  <%= link_to "Sign in with OpenID", "/auth/open_id" %>
 <% end %>'
+
+If you like, you can change your openid_url in:
+config/initializers/just_open_id.rb
+
+Notes:
+
+If you are looking for the route that maps "/auth/open_id", it is hard to find. It is comes as part of omniauth and does not show up in `rake routes`. 
