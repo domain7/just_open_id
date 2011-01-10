@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    just_open_id (0.0.2)
+    just_open_id (0.0.3)
       omniauth
 
 GEM
