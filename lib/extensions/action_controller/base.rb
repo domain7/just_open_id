@@ -19,7 +19,7 @@ class ActionController::Base
   
   def deny_access
     store_location
-    redirect_to login_path
+    redirect_to '/auth/open_id'
   end
   
   def current_user
