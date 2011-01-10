@@ -35,3 +35,11 @@ config/initializers/just_open_id.rb
 Notes:
 
 If you are looking for the route that maps "/auth/open_id", it is hard to find. It is comes as part of omniauth and does not show up in `rake routes`. 
+
+Filters:
+
+You get the following filters for controllers:
+-require_user
+-current_user
+
+
