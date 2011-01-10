@@ -4,6 +4,7 @@ module JustOpenId
 
   #  This engine is intended to run as a gem.
   #  The lib below will be installed via gem dependencies.
+  #  TODO: Get rid of this
   begin
     require "omniauth"
   rescue LoadError => e
