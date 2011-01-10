@@ -42,4 +42,5 @@ You get the following filters for controllers:
 -require_user
 -current_user
 
-
+Heroku:
+This works on Heroku, but it is using the ./tmp dir. 
