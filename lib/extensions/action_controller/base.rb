@@ -19,7 +19,7 @@ class ActionController::Base
   
   def deny_access
     store_location
-    redirect_to '/auth/open_id'
+    redirect_to '/auth/google_apps'
   end
   
   def current_user
