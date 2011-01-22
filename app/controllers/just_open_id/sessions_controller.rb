@@ -7,7 +7,8 @@ module JustOpenId
       auth = request.env["omniauth.auth"]
       user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
       session[:user_id] = user.id
-      redirect_to root_url, :notice => "Signed in!"
+      path = session.has_key?(:return_to) ? session[:return_to] : root_url
+      redirect_to path, :notice => "Signed in!"
     end
   
     def destroy
