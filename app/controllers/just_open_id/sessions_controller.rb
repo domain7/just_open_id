@@ -1,5 +1,6 @@
 module JustOpenId
   class SessionsController < ApplicationController
+    skip_before_filter :require_user, :only => [:create]
 
     unloadable
     
