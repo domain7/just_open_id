@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = "A Rails 3 engine for just OpenID logins using OmniAuth that connects to a User model."
 
   s.rubyforge_project = "just_open_id"
-  s.add_dependency "omniauth"
+  s.add_dependency('omniauth', '0.0.1')
   # s.add_development_dependency "rspec"
 
   s.files         = `git ls-files`.split("\n")
